@@ -1,0 +1,21 @@
+{
+  "name": "@bka-stuff/mfe-utils",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "jwt-decode": "^4.0.0"
+  },
+  "peerDependencies": {
+    "axios": "^1"
+  }
+}
