@@ -26,3 +26,10 @@ createAuthClient({
 ```
 
 Then use `axiosPublic` and `axiosAuth` wherever you feel like. All the token refresh and all that stuff is handled by the package.
+
+## Defaults
+There are a few defaults that can be changed by adding props to `createAuthClient` options:
+- `storage`: defaults to localstorage
+- `keys`: defaults to `{ access: "access_token", refresh: "refresh_token" }
+  - you can change one or both of these
+- `refreshEndpoint`: defaults to `/token/exchange`
