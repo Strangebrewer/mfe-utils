@@ -12,5 +12,9 @@ export default defineConfig({
   unbundle: true,
   plugins: [
     injectCssPlugin(),
-  ]
+  ],
+  css: {
+    splitting: true,
+    inject: true,
+  }
 });
