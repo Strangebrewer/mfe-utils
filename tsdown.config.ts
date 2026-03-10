@@ -11,5 +11,9 @@ export default defineConfig({
   },
   plugins: [
     injectCssPlugin(),
-  ]
+  ],
+  css: {
+    splitting: true,
+    inject: true,
+  }
 });
