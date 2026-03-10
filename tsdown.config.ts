@@ -9,4 +9,7 @@ export default defineConfig({
     skipNodeModulesBundle: true,
   },
   unbundle: true,
+  css: {
+    inject: true
+  }
 });
