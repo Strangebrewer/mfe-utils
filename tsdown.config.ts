@@ -9,11 +9,8 @@ export default defineConfig({
   deps: {
     skipNodeModulesBundle: true,
   },
+  unbundle: true,
   plugins: [
     injectCssPlugin(),
-  ],
-  css: {
-    splitting: true,
-    inject: true,
-  }
+  ]
 });
