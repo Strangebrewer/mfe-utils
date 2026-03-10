@@ -17,7 +17,6 @@
     "prepare": "pnpm run build"
   },
   "devDependencies": {
-    "@bosh-code/tsdown-plugin-inject-css": "^2.0.0",
     "@tsdown/css": "^0.21.1",
     "@types/react": "18.3.27",
     "@types/react-dom": "^18.3.7",

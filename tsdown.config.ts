@@ -1,5 +1,4 @@
 import { defineConfig } from "tsdown";
-import { injectCssPlugin } from '@bosh-code/tsdown-plugin-inject-css';
 
 export default defineConfig({
   entry: ["src/index.ts"],
@@ -8,9 +7,5 @@ export default defineConfig({
   outDir: "dist",
   deps: {
     skipNodeModulesBundle: true,
-  },
-  unbundle: true,
-  plugins: [
-    injectCssPlugin(),
-  ]
+  }
 });
