@@ -12,3 +12,4 @@ const Modal: FC<ModalProps> = ({ open, children }) => {
 }
 
 export default Modal;
+
