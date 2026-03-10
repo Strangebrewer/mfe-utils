@@ -10,6 +10,6 @@ export default defineConfig({
   },
   unbundle: true,
   css: {
-    inject: true
+    splitting: true
   }
 });
