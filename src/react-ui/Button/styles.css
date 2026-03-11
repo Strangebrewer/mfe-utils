@@ -1,3 +1,5 @@
+@import "../index.css";
+
 .button-base {
   border-radius: 5px;
   cursor: pointer;
