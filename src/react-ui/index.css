@@ -48,3 +48,7 @@
   --variables: #78d9ff;
   --const: #5d8bec;
 }
+
+html {
+  outline: 4px solid magenta;
+}
