@@ -49,8 +49,8 @@
   --const: #5d8bec;
 }
 
-html {
-  outline: 4px solid magenta !important;
+body {
+  background: magenta !important;
 }
 
 .button-base {
