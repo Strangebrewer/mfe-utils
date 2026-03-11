@@ -1,11 +1,11 @@
 .bka-modal-fade-in {
   animation-duration: 0.2s;
   animation-name: fadein;
+}
 
-   @keyframes fadein {
-    from { opacity: 0; }
-    to { opacity: 1 }
-   }
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1 }
 }
 
 .bka-modal-wrapper {
