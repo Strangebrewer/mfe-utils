@@ -50,7 +50,7 @@
 }
 
 html {
-  outline: 4px solid magenta;
+  outline: 4px solid magenta !important;
 }
 
 .button-base {
