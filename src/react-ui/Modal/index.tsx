@@ -20,7 +20,7 @@ const Modal: FC<ModalProps> = ({ isOpen, close, children }) => {
   const modalWrapper = () => {
     return (
       <div className="bka-modal-fade-in bka-modal-wrapper" onClick={onClickOutside}>
-        <div className="bka-modal-fade-in bka-modal-body">'
+        <div className="bka-modal-fade-in bka-modal-body">
           {children}
         </div>
       </div>
