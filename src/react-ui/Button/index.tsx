@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import "../index.css";
+import "../theme.css";
 import "./styles.css";
 
 type ButtonProps = {
