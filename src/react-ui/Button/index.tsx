@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import "./styles.css";
+import "../index.css";
 
 type ButtonProps = {
   text: string;
