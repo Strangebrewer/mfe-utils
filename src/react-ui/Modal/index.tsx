@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 
 type ModalProps = {
   isOpen: boolean;
-  close: () => void;
+  close?: () => void;
   children: React.ReactNode
 }
 
@@ -12,7 +12,7 @@ const Modal: FC<ModalProps> = ({ isOpen, close, children }) => {
 
   function onClickOutside(e: React.BaseSyntheticEvent) {
     if (e.target.className.includes('bka-modal-wrapper')) {
-      close();
+      close?.();
     }
   }
 
