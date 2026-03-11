@@ -7,5 +7,5 @@ export default defineConfig({
   outDir: "dist",
   deps: {
     skipNodeModulesBundle: true,
-  }
+  },
 });

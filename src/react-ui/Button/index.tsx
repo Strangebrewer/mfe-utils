@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import "../theme.css";
 import "./styles.css";
 
 type ButtonProps = {
