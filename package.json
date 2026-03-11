@@ -16,6 +16,9 @@
     "build": "tsdown",
     "prepare": "pnpm run build"
   },
+  "sideEffects": [
+    "**/*.css"
+  ],
   "devDependencies": {
     "@tsdown/css": "^0.21.1",
     "@types/react": "18.3.27",
