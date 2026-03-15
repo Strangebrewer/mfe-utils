@@ -16,6 +16,7 @@ const Button: FC<ButtonProps> = ({
   variant,
   small = false,
   last = false,
+  disabled = false,
   onClick,
 }) => {
   return (
@@ -27,6 +28,7 @@ const Button: FC<ButtonProps> = ({
         button-${variant}
       `}
       onClick={onClick}
+      disabled={disabled}
     >
       {text}
     </button>
