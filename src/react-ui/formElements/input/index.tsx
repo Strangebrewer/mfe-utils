@@ -16,12 +16,9 @@ const Input: FC<InputProps> = ({
   onChange,
   full = false,
 }) => {
-  let className = 'bka-form-element';
-  if (full === true || full === "true") className += ' bka-form-element-full';
-
   return (
     <input
-      className={className}
+      className={`bka-form-element ${full ? 'bka-form-element-full' : ''}`}
       type={type}
       name={name}
       value={value}

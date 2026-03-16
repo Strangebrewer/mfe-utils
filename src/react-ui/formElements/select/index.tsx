@@ -16,12 +16,9 @@ const Select: FC<SelectProps> = ({
   full = false,
   children,
 }) => {
-  let className = 'bka-form-element bka-select';
-  if (full === true || full === "true") className += ' bka-form-element-full';
-
   return (
     <select
-      className={className}
+      className={`bka-form-element bka-select ${full ? 'bka-form-element-full' : ''}`}
       name={name}
       value={value}
       onChange={onChange}

@@ -14,12 +14,9 @@ const Textarea: FC<TextareaProps> = ({
   onChange,
   full = false,
 }) => {
-  let className = 'bka-form-element bka-textarea';
-  if (full === true || full === "true") className += ' bka-form-element-full';
-
   return (
     <textarea
-      className={className}
+      className={`bka-form-element bka-textarea ${full ? 'bka-form-element-full' : ''}`}
       name={name}
       value={value}
       onChange={onChange}
