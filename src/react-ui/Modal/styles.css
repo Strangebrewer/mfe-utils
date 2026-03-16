@@ -30,7 +30,6 @@
     inset -2px -2px 6px #800080,
     inset 2px 2px 6px #800080;
   border-radius: 12px;
-  display: relative;
   font-size: 1.2rem;
   margin: auto;
   max-width: 60%;
@@ -45,7 +44,7 @@
 }
 
 .bka-modal-x-btn {
-  display: absolute;
+  position: absolute;
   top: 8px;
   right: 8px;
   outline: transparent;
