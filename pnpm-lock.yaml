@@ -15,15 +15,15 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0
       react:
-        specifier: ^19.2.4
+        specifier: ^18.2.0
         version: 19.2.4
       react-dom:
         specifier: ^18.2.0
         version: 18.3.1(react@19.2.4)
+      zustand:
+        specifier: ^5.0.12
+        version: 5.0.12(@types/react@18.3.27)(react@19.2.4)
     devDependencies:
-      '@bosh-code/tsdown-plugin-inject-css':
-        specifier: ^2.0.0
-        version: 2.0.0(tsdown@0.21.1)
       '@tsdown/css':
         specifier: ^0.21.1
         version: 0.21.1(tsdown@0.21.1)
@@ -45,64 +45,6 @@ importers:
 
 packages:
 
-  '@ast-grep/napi-darwin-arm64@0.39.9':
-    resolution: {integrity: sha512-0gdBC2oPBkIBsh89yUXxJeK37QYRbp1qNZVuRGizT666ljgCw+2NIxHeQGNjwWuI0+g3exrd8FyqD3gMixRx3w==, tarball: https://registry.npmjs.org/@ast-grep/napi-darwin-arm64/-/napi-darwin-arm64-0.39.9.tgz}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [darwin]
-
-  '@ast-grep/napi-darwin-x64@0.39.9':
-    resolution: {integrity: sha512-7QuQNFwcVj71hDAMBErF+mVq2h92vUdHLKa/vq58HdRpix5G3DZqcTKoFjwhCNzc2wsNRAjV+BiIR01znQSxLA==, tarball: https://registry.npmjs.org/@ast-grep/napi-darwin-x64/-/napi-darwin-x64-0.39.9.tgz}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [darwin]
-
-  '@ast-grep/napi-linux-arm64-gnu@0.39.9':
-    resolution: {integrity: sha512-qXTjhagRYkPyHNACEzGi5q26OMRdSvLRRqi799oZaSDf96Xj+8tcB5+tFlH0NpqaP84GsZoQ15SfDXeoP4qdmQ==, tarball: https://registry.npmjs.org/@ast-grep/napi-linux-arm64-gnu/-/napi-linux-arm64-gnu-0.39.9.tgz}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [linux]
-
-  '@ast-grep/napi-linux-arm64-musl@0.39.9':
-    resolution: {integrity: sha512-U9KVohyburVGEWiiREFq+iTxdMdSbRyXL+yzCVvGPmLPW4Ca4zpX9Cret4jCJBp8dljSIK0C7txXAc7fM+6rag==, tarball: https://registry.npmjs.org/@ast-grep/napi-linux-arm64-musl/-/napi-linux-arm64-musl-0.39.9.tgz}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [linux]
-
-  '@ast-grep/napi-linux-x64-gnu@0.39.9':
-    resolution: {integrity: sha512-C5WwiNr/eE7lS0vl9bNdSXrsGIUAga2SaqV3G+ogVl9HeRU2jtGhv+3AgzGvYWj+PtnbtuZ2Nxkm10gEVPhv1A==, tarball: https://registry.npmjs.org/@ast-grep/napi-linux-x64-gnu/-/napi-linux-x64-gnu-0.39.9.tgz}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [linux]
-
-  '@ast-grep/napi-linux-x64-musl@0.39.9':
-    resolution: {integrity: sha512-KutzZSMhHP3P43nQ+kNSbuiDaqkCcdqOcXLnq28MRvS+qwvW+01dJ8eWRlpMJC9vCJmaJAZfI7xkNSp74WkdxA==, tarball: https://registry.npmjs.org/@ast-grep/napi-linux-x64-musl/-/napi-linux-x64-musl-0.39.9.tgz}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [linux]
-
-  '@ast-grep/napi-win32-arm64-msvc@0.39.9':
-    resolution: {integrity: sha512-S2kC6K9I7e70oMVn2FDICzVlz7SPZVWNCRKCBD+Dgy1OTn0byzmMLaGpjth3pqN93UCssEC03ooP3tuclS0JSA==, tarball: https://registry.npmjs.org/@ast-grep/napi-win32-arm64-msvc/-/napi-win32-arm64-msvc-0.39.9.tgz}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [win32]
-
-  '@ast-grep/napi-win32-ia32-msvc@0.39.9':
-    resolution: {integrity: sha512-n18Dqtc7O5q8ZM9gBNkvLd+ajdjLNraw4ZoIcHelI7TnTvh1m6zR3tUuHNxPhL+IJfdKx3ne7ATKlEeiSlMn4g==, tarball: https://registry.npmjs.org/@ast-grep/napi-win32-ia32-msvc/-/napi-win32-ia32-msvc-0.39.9.tgz}
-    engines: {node: '>= 10'}
-    cpu: [ia32]
-    os: [win32]
-
-  '@ast-grep/napi-win32-x64-msvc@0.39.9':
-    resolution: {integrity: sha512-YOF7mO+6nvyRtMC179u82Vr1qIGOmoE1yjwr4cmAf7DVNd+vs42y9tbQGYwLmVY8M3Hg1PviB8XX7FQKewuOGQ==, tarball: https://registry.npmjs.org/@ast-grep/napi-win32-x64-msvc/-/napi-win32-x64-msvc-0.39.9.tgz}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [win32]
-
-  '@ast-grep/napi@0.39.9':
-    resolution: {integrity: sha512-qtLLQq1a3isK0iaq0Drl7Qt4PqeyjTrpFxNdA/20O/jYkGiA/oJA8DLMn1bzczsfjlUohe4dg39bpeAqG02uvA==, tarball: https://registry.npmjs.org/@ast-grep/napi/-/napi-0.39.9.tgz}
-    engines: {node: '>= 10'}
-
   '@babel/generator@8.0.0-rc.2':
     resolution: {integrity: sha512-oCQ1IKPwkzCeJzAPb7Fv8rQ9k5+1sG8mf2uoHiMInPYvkRfrDJxbTIbH51U+jstlkghus0vAi3EBvkfvEsYNLQ==, tarball: https://registry.npmjs.org/@babel/generator/-/generator-8.0.0-rc.2.tgz}
     engines: {node: ^20.19.0 || >=22.12.0}
@@ -123,12 +65,6 @@ packages:
   '@babel/types@8.0.0-rc.2':
     resolution: {integrity: sha512-91gAaWRznDwSX4E2tZ1YjBuIfnQVOFDCQ2r0Toby0gu4XEbyF623kXLMA8d4ZbCu+fINcrudkmEcwSUHgDDkNw==, tarball: https://registry.npmjs.org/@babel/types/-/types-8.0.0-rc.2.tgz}
     engines: {node: ^20.19.0 || >=22.12.0}
-
-  '@bosh-code/tsdown-plugin-inject-css@2.0.0':
-    resolution: {integrity: sha512-vlAAI4MbFg+FSxbh/xF545XJPT7Tr4T7Mz/H95EdSh3Px/+eRnSA1/yADJ84a9ffywwblujyyOblkmgaS80Eew==, tarball: https://registry.npmjs.org/@bosh-code/tsdown-plugin-inject-css/-/tsdown-plugin-inject-css-2.0.0.tgz}
-    engines: {node: '>=24'}
-    peerDependencies:
-      tsdown: '>=0.10.0'
 
   '@emnapi/core@1.8.1':
     resolution: {integrity: sha512-AvT9QFpxK0Zd8J0jopedNm+w/2fIzvtPKPjqyw9jwvBaReTTqPBk9Hixaz7KbjimP+QNz605/XnjFcDAL2pqBg==, tarball: https://registry.npmjs.org/@emnapi/core/-/core-1.8.1.tgz}
@@ -821,46 +757,25 @@ packages:
     resolution: {integrity: sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw==, tarball: https://registry.npmjs.org/yargs/-/yargs-16.2.0.tgz}
     engines: {node: '>=10'}
 
+  zustand@5.0.12:
+    resolution: {integrity: sha512-i77ae3aZq4dhMlRhJVCYgMLKuSiZAaUPAct2AksxQ+gOtimhGMdXljRT21P5BNpeT4kXlLIckvkPM029OljD7g==, tarball: https://registry.npmjs.org/zustand/-/zustand-5.0.12.tgz}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      '@types/react': '>=18.0.0'
+      immer: '>=9.0.6'
+      react: '>=18.0.0'
+      use-sync-external-store: '>=1.2.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      immer:
+        optional: true
+      react:
+        optional: true
+      use-sync-external-store:
+        optional: true
+
 snapshots:
-
-  '@ast-grep/napi-darwin-arm64@0.39.9':
-    optional: true
-
-  '@ast-grep/napi-darwin-x64@0.39.9':
-    optional: true
-
-  '@ast-grep/napi-linux-arm64-gnu@0.39.9':
-    optional: true
-
-  '@ast-grep/napi-linux-arm64-musl@0.39.9':
-    optional: true
-
-  '@ast-grep/napi-linux-x64-gnu@0.39.9':
-    optional: true
-
-  '@ast-grep/napi-linux-x64-musl@0.39.9':
-    optional: true
-
-  '@ast-grep/napi-win32-arm64-msvc@0.39.9':
-    optional: true
-
-  '@ast-grep/napi-win32-ia32-msvc@0.39.9':
-    optional: true
-
-  '@ast-grep/napi-win32-x64-msvc@0.39.9':
-    optional: true
-
-  '@ast-grep/napi@0.39.9':
-    optionalDependencies:
-      '@ast-grep/napi-darwin-arm64': 0.39.9
-      '@ast-grep/napi-darwin-x64': 0.39.9
-      '@ast-grep/napi-linux-arm64-gnu': 0.39.9
-      '@ast-grep/napi-linux-arm64-musl': 0.39.9
-      '@ast-grep/napi-linux-x64-gnu': 0.39.9
-      '@ast-grep/napi-linux-x64-musl': 0.39.9
-      '@ast-grep/napi-win32-arm64-msvc': 0.39.9
-      '@ast-grep/napi-win32-ia32-msvc': 0.39.9
-      '@ast-grep/napi-win32-x64-msvc': 0.39.9
 
   '@babel/generator@8.0.0-rc.2':
     dependencies:
@@ -883,11 +798,6 @@ snapshots:
     dependencies:
       '@babel/helper-string-parser': 8.0.0-rc.2
       '@babel/helper-validator-identifier': 8.0.0-rc.2
-
-  '@bosh-code/tsdown-plugin-inject-css@2.0.0(tsdown@0.21.1)':
-    dependencies:
-      '@ast-grep/napi': 0.39.9
-      tsdown: 0.21.1(@tsdown/css@0.21.1)(typescript@5.9.3)
 
   '@emnapi/core@1.8.1':
     dependencies:
@@ -1479,3 +1389,8 @@ snapshots:
       string-width: 4.2.3
       y18n: 5.0.8
       yargs-parser: 20.2.9
+
+  zustand@5.0.12(@types/react@18.3.27)(react@19.2.4):
+    optionalDependencies:
+      '@types/react': 18.3.27
+      react: 19.2.4
