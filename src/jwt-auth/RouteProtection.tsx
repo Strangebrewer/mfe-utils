@@ -1,0 +1,27 @@
+import React from 'react';
+import { Navigate, Outlet } from 'react-router-dom';
+import { useUserStore } from './userStore';
+
+export function RequireAuth({ redirectUrl = "/" }) {
+  const { user, isReady } = useUserStore();
+
+  if (!isReady) return null;
+
+  if (!user) {
+    return <Navigate to={redirectUrl} replace />
+  }
+
+  return <Outlet />
+}
+
+export function RequireGuest({ redirectUrl = "/dashboard" }) {
+  const { user, isReady } = useUserStore();
+
+  if (!isReady) return null;
+
+  if (user) {
+    return <Navigate to={redirectUrl} replace />
+  }
+
+  return <Outlet />
+}
