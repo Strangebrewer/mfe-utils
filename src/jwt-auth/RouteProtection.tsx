@@ -4,6 +4,7 @@ import { useUserStore } from './userStore';
 
 export function RequireAuth({ redirectUrl = "/" }) {
   const { user, isReady } = useUserStore();
+  console.log("RequireAuth", { isReady, user });
 
   if (!isReady) return <div>Loading...</div>;
 
@@ -16,6 +17,7 @@ export function RequireAuth({ redirectUrl = "/" }) {
 
 export function RequireGuest({ redirectUrl = "/dashboard" }) {
   const { user, isReady } = useUserStore();
+  console.log("RequireGuest", { isReady, user });
 
   if (!isReady) return <div>Loading...</div>;
 
