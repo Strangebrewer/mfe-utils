@@ -38,7 +38,7 @@
   position: relative;
   z-index: 9999;
   
-  img {
+  & > img {
     border: 1px solid black;
   }
 }
@@ -48,7 +48,7 @@
   top: 8px;
   right: 8px;
   outline: transparent;
-  border: none;
+  border: 1px solid red;
   background-color: transparent;
   padding: 0;
   margin: 0;
