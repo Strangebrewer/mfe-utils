@@ -4,15 +4,21 @@ import "./styles.css"
 
 type ModalProps = {
   isOpen: boolean;
+  children: React.ReactNode;
+  closeOnOutsideClick: boolean;
   close?: () => void;
-  children: React.ReactNode
 }
 
-const Modal: FC<ModalProps> = ({ isOpen, close, children }) => {
+const Modal: FC<ModalProps> = ({
+  isOpen,
+  close,
+  children,
+  closeOnOutsideClick = true,
+}) => {
   if (!isOpen) return null;
 
   function onClickOutside(e: React.BaseSyntheticEvent) {
-    if (e.target.className.includes('bka-modal-wrapper')) {
+    if (e.target.className.includes('bka-modal-wrapper') && closeOnOutsideClick) {
       close?.();
     }
   }
