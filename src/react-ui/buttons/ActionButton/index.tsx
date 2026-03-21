@@ -7,6 +7,7 @@ type ActionButtonProps = {
   onClick: () => any;
   color?: 'blue' | 'red' | 'green';
   size?: 'sm' | 'md' | 'lg' | 'xl';
+  title?: string;
 }
 
 const ActionButton: FC<ActionButtonProps> = ({
@@ -14,7 +15,8 @@ const ActionButton: FC<ActionButtonProps> = ({
   color = 'green',
   size = 'md',
   text,
-  onClick
+  onClick,
+  title,
 }) => {
   const style: Obj = { fontSize: '12px' };
   if (size !== 'md') {
@@ -26,6 +28,7 @@ const ActionButton: FC<ActionButtonProps> = ({
   return (
     <button
       style={style}
+      title={title}
       className={`bka-action-btn bka-action-btn--${color}`}
       onClick={onClick}
     >
