@@ -5,7 +5,7 @@ import "./styles.css"
 type ModalProps = {
   isOpen: boolean;
   children: React.ReactNode;
-  closeOnOutsideClick: boolean;
+  closeOnOutsideClick?: boolean;
   close?: () => void;
 }
 
