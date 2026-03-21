@@ -1,8 +1,10 @@
 # mfe-utils
 
-To load this in a project:
+Auth utilities and the beginning of a component library to use across different repos. I created this so I could share the logic between MFEs without needing to copy the login into each one.
 
-`pnpm add @bka-stuff/mfe-utils@git+https://github.com/Strangebrewer/mfe-utils.git#v0.1.1`
+To use the auth utils in a project:
+
+`pnpm add @bka-stuff/mfe-utils@git+https://github.com/Strangebrewer/mfe-utils.git#main`
 
 Then create an `axios.ts` file:
 

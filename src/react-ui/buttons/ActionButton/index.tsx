@@ -34,7 +34,7 @@ const ActionButton: FC<ActionButtonProps> = ({
     >
       {iconClass ? <i className={iconClass} /> : text}
     </button>
-  )
-}
+  );
+};
 
 export default ActionButton;
