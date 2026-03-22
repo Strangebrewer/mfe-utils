@@ -22,6 +22,7 @@ const Select: FC<SelectProps> = ({
       name={name}
       value={value}
       onChange={onChange}
+      autoFocus
     >
       {children}
     </select>

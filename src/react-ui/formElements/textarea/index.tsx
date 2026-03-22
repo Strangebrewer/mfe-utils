@@ -6,6 +6,7 @@ type TextareaProps = {
   value: any;
   onChange: (e: any) => any;
   full?: boolean | "true";
+  autofocus?: boolean;
 };
 
 const Textarea: FC<TextareaProps> = ({
@@ -13,13 +14,17 @@ const Textarea: FC<TextareaProps> = ({
   value,
   onChange,
   full = false,
+  autofocus = false,
 }) => {
+  const addedProps: Obj = {};
+  if (autofocus) addedProps.autoFocus = autofocus;
   return (
     <textarea
       className={`bka-form-element bka-textarea ${full ? 'bka-form-element-full' : ''}`}
       name={name}
       value={value}
       onChange={onChange}
+      {...addedProps}
     />
   );
 };

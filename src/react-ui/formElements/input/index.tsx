@@ -7,6 +7,7 @@ type InputProps = {
   value: any;
   onChange: (e: any) => any;
   full?: boolean | "true";
+  autofocus?: boolean;
 }
 
 const Input: FC<InputProps> = ({
@@ -15,7 +16,10 @@ const Input: FC<InputProps> = ({
   value,
   onChange,
   full = false,
+  autofocus = false,
 }) => {
+  const addedProps: Obj = {};
+  if (autofocus) addedProps.autoFocus = autofocus;
   return (
     <input
       className={`bka-form-element ${full ? 'bka-form-element-full' : ''}`}
@@ -23,6 +27,7 @@ const Input: FC<InputProps> = ({
       name={name}
       value={value}
       onChange={onChange}
+      {...addedProps}
     />
   );
 };
