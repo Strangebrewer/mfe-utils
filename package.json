@@ -11,7 +11,11 @@
       "types": "./dist/index.d.mts",
       "default": "./dist/index.mjs"
     },
-    "./style.css": "./dist/style.css"
+    "./style.css": "./dist/style.css",
+    "./webpackConfigDefaults": {
+      "types": "./dist/webpackConfigDefaults.d.mts",
+      "default": "./dist/webpackConfigDefaults.mjs"
+    }
   },
   "scripts": {
     "build": "tsdown",
@@ -22,12 +26,19 @@
   ],
   "devDependencies": {
     "@tsdown/css": "^0.21.1",
+    "@types/node": "^25.5.0",
     "@types/react": "18.3.27",
     "@types/react-dom": "^18.3.7",
     "axios": "1.13.6",
     "copyfiles": "^2.4.1",
+    "html-webpack-plugin": "^5.6.6",
     "tsdown": "^0.21.1",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "webpack": "5.103.0",
+    "webpack-bundle-analyzer": "4.10.2",
+    "webpack-cli": "6.0.1",
+    "webpack-dev-server": "5.2.2",
+    "webpack-merge": "6.0.1"
   },
   "dependencies": {
     "axios": "1.13.6",
