@@ -1,17 +1,15 @@
-import type { Configuration } from 'webpack';
 import 'webpack-dev-server';
-import path from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import webpack from 'webpack';
 
 interface WebpackConfigOptions {
   appName: string;
   exposes?: Record<string, string>;
   shared?: Record<string, object>;
   port?: number;
+  resolve: (...paths: string[]) => string;
+  _dirname: string;
 }
 
-const defaultShared = {
+export const defaultShared = {
   react: { singleton: true },
   'react-dom': { singleton: true },
   'react-router-dom': { singleton: true },
@@ -20,8 +18,13 @@ const defaultShared = {
   '@bka-stuff/mfe-utils': { singleton: true },
 };
 
-export default function createWebpackConfig(options: WebpackConfigOptions): Configuration {
-  const { appName, exposes = {}, shared = {}, port = 3000 } = options;
+export function createWebpackConfig(options: WebpackConfigOptions) {
+  const {
+    appName,
+    port = 3000,
+    resolve,
+    _dirname,
+  } = options;
 
   return {
     mode: 'development',
@@ -32,7 +35,7 @@ export default function createWebpackConfig(options: WebpackConfigOptions): Conf
       uniqueName: appName,
       chunkLoadingGlobal: `webpackChunk_${appName}`,
       crossOriginLoading: 'anonymous',
-      path: path.resolve(__dirname, 'dist'),
+      path: resolve(_dirname, 'dist'),
       filename: '[name].bundle.js',
       clean: true,
     },
@@ -41,9 +44,9 @@ export default function createWebpackConfig(options: WebpackConfigOptions): Conf
       extensions: ['.ts', '.tsx', '.js', '.jsx'],
       symlinks: true,
       alias: {
-        axios: path.resolve(__dirname, 'node_modules/axios'),
-        react: path.resolve(__dirname, 'node_modules/react'),
-        'react-dom': path.resolve(__dirname, 'node_modules/react-dom'),
+        axios: resolve(_dirname, 'node_modules/axios'),
+        react: resolve(_dirname, 'node_modules/react'),
+        'react-dom': resolve(_dirname, 'node_modules/react-dom'),
       },
     },
 
@@ -54,7 +57,7 @@ export default function createWebpackConfig(options: WebpackConfigOptions): Conf
           use: {
             loader: 'ts-loader',
             options: {
-              configFile: path.resolve(__dirname, 'tsconfig.json'),
+              configFile: resolve(_dirname, 'tsconfig.json'),
               transpileOnly: true,
             },
           },
@@ -67,18 +70,6 @@ export default function createWebpackConfig(options: WebpackConfigOptions): Conf
       ],
     },
 
-    plugins: [
-      new HtmlWebpackPlugin({
-        template: './public/index.html',
-      }),
-      new webpack.container.ModuleFederationPlugin({
-        name: appName,
-        filename: 'remoteEntry.js',
-        exposes,
-        shared: { ...defaultShared, ...shared },
-      }),
-    ],
-
     devServer: {
       port,
       hot: false,
@@ -87,7 +78,7 @@ export default function createWebpackConfig(options: WebpackConfigOptions): Conf
         overlay: {
           warnings: false,
           errors: true,
-          runtimeErrors: (error) => !error.message.includes('ResizeObserver loop'),
+          runtimeErrors: (error: any) => !error.message.includes('ResizeObserver loop'),
         },
       },
       headers: {
