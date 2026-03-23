@@ -1,5 +1,3 @@
-import 'webpack-dev-server';
-
 interface WebpackConfigOptions {
   appName: string;
   exposes?: Record<string, string>;
