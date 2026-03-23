@@ -9,11 +9,12 @@ A shared utility library for a micro-frontend (MFE) learning project. It started
 
 Not formally versioned — changes are picked up by dependents on next install.
 
-## Two modules
+## Three modules
 - **`jwt-auth`** — axios-based auth client with proactive token refresh and Zustand stores
 - **`react-ui`** — basic React components (buttons, form elements, modal)
+- **`webpackConfigDefaults`** — shared webpack config factory for MFE repos
 
-Both are re-exported from a single entry point: `src/index.ts`.
+All three are re-exported from a single entry point: `src/index.ts`.
 
 ## Build
 ```bash
@@ -57,6 +58,38 @@ Plain CSS files, colocated with each component. No CSS modules, no Tailwind, no 
 - Refresh endpoint: `POST /token/exchange` — sends refresh token as `Authorization: Bearer <token>`
 - Revoke endpoint: `POST /token/revoke` (used by consuming apps on logout)
 - `axiosPublic` (no auth interceptor) is used for refresh calls to avoid circular interception
+
+## webpackConfigDefaults — how it works
+`createWebpackConfig(options)` returns a base webpack `Configuration` object with sensible MFE defaults (loaders, resolve aliases, devServer). Plugins (`HtmlWebpackPlugin`, `ModuleFederationPlugin`) are intentionally omitted — each MFE spreads the returned config and adds its own plugins.
+
+`defaultShared` is exported separately for use in each MFE's `ModuleFederationPlugin` setup.
+
+Options:
+- `appName` — used for `uniqueName` and `chunkLoadingGlobal`
+- `port` — devServer port (default: `3000`)
+- `resolve` — pass `path.resolve` from the calling MFE
+- `_dirname` — pass `__dirname` from the calling MFE (required so paths resolve relative to the MFE project, not this package)
+
+Usage in an MFE's `webpack.config.ts`:
+```ts
+import path from 'path';
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { createWebpackConfig, defaultShared } from '@bka-stuff/mfe-utils';
+
+export default {
+  ...createWebpackConfig({ appName: 'my-app', port: 3001, resolve: path.resolve, _dirname: __dirname }),
+  plugins: [
+    new HtmlWebpackPlugin({ template: './public/index.html' }),
+    new webpack.container.ModuleFederationPlugin({
+      name: 'my-app',
+      filename: 'remoteEntry.js',
+      exposes: { './App': './src/App' },
+      shared: { ...defaultShared },
+    }),
+  ],
+};
+```
 
 ## Dependencies — ask first
 **Always ask before adding a new dependency.** The library is intentionally lean. Existing runtime deps: `axios`, `jwt-decode`, `react-router-dom`, `zustand`. Peer deps: `react`, `react-dom`, `axios`.

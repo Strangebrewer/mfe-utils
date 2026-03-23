@@ -11,11 +11,7 @@
       "types": "./dist/index.d.mts",
       "default": "./dist/index.mjs"
     },
-    "./style.css": "./dist/style.css",
-    "./webpackConfigDefaults": {
-      "types": "./dist/webpackConfigDefaults.d.mts",
-      "default": "./dist/webpackConfigDefaults.mjs"
-    }
+    "./style.css": "./dist/style.css"
   },
   "scripts": {
     "build": "tsdown",
