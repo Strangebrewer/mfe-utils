@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import "../formStyles.css";
 
 type InputProps = {
@@ -18,8 +18,13 @@ const Input: FC<InputProps> = ({
   full = false,
   autofocus = false,
 }) => {
-  const addedProps: Obj = {};
-  if (autofocus) addedProps.autoFocus = autofocus;
+  const inputRef = React.useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (autofocus) {
+      requestAnimationFrame(() => inputRef.current?.focus());
+    }
+  }, [autofocus]);
   return (
     <input
       className={`bka-form-element ${full ? 'bka-form-element-full' : ''}`}
@@ -27,7 +32,7 @@ const Input: FC<InputProps> = ({
       name={name}
       value={value}
       onChange={onChange}
-      {...addedProps}
+      ref={inputRef}
     />
   );
 };
