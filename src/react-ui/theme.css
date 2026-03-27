@@ -18,6 +18,8 @@
   --yellowAlpha: #ffff0077;
   --limeAlpha: #51CB2077;
   --purpleAlpha: #80008077;
+  --indigo: #4b0082;
+  --indigoAlpha: #4b008277;
 
   /* neon colors */
   --nBlue: #4666FF;
@@ -28,7 +30,6 @@
   --nGreen: #39FF14;
 
   /* other colors I like */
-  --indigo: #4b0082;
   --rose: #F72585;
   --carrot: #F18F01;
   --lime: #51CB20;
