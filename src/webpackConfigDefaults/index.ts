@@ -29,7 +29,7 @@ export function createWebpackConfig(options: WebpackConfigOptions) {
     entry: './src/index.ts',
 
     output: {
-      publicPath: 'auto',
+      publicPath: '/',
       uniqueName: appName,
       chunkLoadingGlobal: `webpackChunk_${appName}`,
       crossOriginLoading: 'anonymous',
