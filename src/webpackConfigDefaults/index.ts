@@ -5,6 +5,7 @@ interface WebpackConfigOptions {
   port?: number;
   resolve: (...paths: string[]) => string;
   _dirname: string;
+  publicPath?: string;
 }
 
 export const defaultShared = {
@@ -22,6 +23,7 @@ export function createWebpackConfig(options: WebpackConfigOptions) {
     port = 3000,
     resolve,
     _dirname,
+    publicPath = 'auto',
   } = options;
 
   return {
@@ -29,7 +31,7 @@ export function createWebpackConfig(options: WebpackConfigOptions) {
     entry: './src/index.ts',
 
     output: {
-      publicPath: '/',
+      publicPath,
       uniqueName: appName,
       chunkLoadingGlobal: `webpackChunk_${appName}`,
       crossOriginLoading: 'anonymous',
