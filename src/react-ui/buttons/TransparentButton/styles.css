@@ -3,7 +3,7 @@
   outline: transparent;
   border: none;
   cursor: pointer;
-  color: transparent;
+  color: #fff;
   padding: 0 6px;
   margin: 0 12px;
   text-shadow: 0 0 1px var(--dodgerblue),
@@ -14,7 +14,7 @@
   &:hover {
     color: var(--dodgerblue);
     text-shadow: 4px 4px 4px #666;
-    transform: translate(-1pc, -1px);
+    transform: translate(-1px, -1px);
   }
 }
 
